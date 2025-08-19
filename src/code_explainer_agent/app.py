@@ -2,9 +2,24 @@
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from pydantic import BaseModel
 from typing import Optional
+from fastapi.middleware.cors import CORSMiddleware
 from src.code_explainer_agent.crew import CodeExplainerAgent
 
 app = FastAPI(title="Code Explainer Agent")
+
+origins = [
+    "http://localhost:5173",  # React dev
+    "http://localhost:3000",  # Alternative React dev
+    "https://your-frontend-domain.com",  # Replace with actual deployed frontend domain
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class ExplainRequest(BaseModel):
     code: Optional[str] = None
