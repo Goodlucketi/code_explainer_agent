@@ -1,10 +1,16 @@
 # src/code_explainer_agent/app.py
+import os
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
 from src.code_explainer_agent.crew import CodeExplainerAgent
 
+# Environment variables
+API_KEY = os.environ.get("OPENAI_API_KEY")
+MODEL = os.environ.get("MODEL_NAME")
+
+# Initialize FastAPI app
 app = FastAPI(title="Code Explainer Agent")
 
 origins = [
