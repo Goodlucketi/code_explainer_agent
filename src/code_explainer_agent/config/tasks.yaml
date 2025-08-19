@@ -1,0 +1,18 @@
+  file_reader_task:
+    description: >
+      Read the uploaded file and extract its content so it can be passed to the explainer.
+    expected_output: >
+      The raw code text extracted from the uploaded file.
+    
+    agent: file_reader
+
+
+  explainer_task:
+    description: >
+      You will be given a {code_snippet} written in any programming language. 
+      First, identify the language. Then, carefully analyze the code and provide a clear, beginner-friendly explanation. Break it down step-by-step, highlight important concepts, and, if possible, suggest improvements or best practices.
+      
+    expected_output: >
+      A detailed explanation of the given code in plain English, including what it does, how it works, and possible improvements.
+    
+    agent: explainer
