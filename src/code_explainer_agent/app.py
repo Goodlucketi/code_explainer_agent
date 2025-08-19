@@ -2,7 +2,7 @@
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from pydantic import BaseModel
 from typing import Optional
-from code_explainer_agent.crew import CodeExplainerAgent
+from src.code_explainer_agent.crew import CodeExplainerAgent
 
 app = FastAPI(title="Code Explainer Agent")
 
