@@ -15,8 +15,7 @@ app = FastAPI(title="Code Explainer Agent")
 
 origins = [
     "http://localhost:5173",  # React dev
-    "http://localhost:3000",  # Alternative React dev
-    "https://code-explainer-agent.vercel.app/",  # Replace with actual deployed frontend domain
+    "https://code-explainer-agent.vercel.app/"
 ]
 
 app.add_middleware(
