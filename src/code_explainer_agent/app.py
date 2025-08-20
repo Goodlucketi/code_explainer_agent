@@ -15,7 +15,7 @@ app = FastAPI(title="Code Explainer Agent")
 
 origins = [
     "http://localhost:5173",  # React dev
-    "https://code-explainer-agent.vercel.app/"
+    "https://code-explainer-agent.vercel.app",  # Vercel production
 ]
 
 app.add_middleware(
