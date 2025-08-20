@@ -32,8 +32,9 @@ class ExplainRequest(BaseModel):
     file_path: Optional[str] = None
 
 def run_crew(code_text: str) -> str:
+    agent = CodeExplainerAgent()  # Reference the initialized agent
     inputs = {"code_snippet": code_text}
-    result = CodeExplainerAgent().crew().kickoff(inputs=inputs)
+    result = agent.crew().kickoff(inputs=inputs)
     return str(result)
 
 @app.get("/health")
