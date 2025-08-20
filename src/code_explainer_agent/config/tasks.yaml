@@ -9,10 +9,12 @@
 
   explainer_task:
     description: >
-      You will be given a {code_snippet} written in any programming language. 
-      First, identify the language. Then, carefully analyze the code and provide a clear, beginner-friendly explanation. Break it down step-by-step, highlight important concepts, and, if possible, suggest improvements or best practices.
+      You will be given a code snippet {code_snippet}. Identify the programming language first. 
+      Then summarize the code in simple, beginner-friendly terms. Focus on the core logic, avoid excessive detail, 
+      and ensure the summary is concise and accurate.
       
     expected_output: >
-      A detailed explanation of the given code in plain English, including what it does, how it works, and possible improvements.
+      A short, accurate explanation of the code snippet, including what it does, its main structure, and key points. 
+      Do not add unrelated content or guesses about frameworks if not explicitly used.
     
     agent: explainer
